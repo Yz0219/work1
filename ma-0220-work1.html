@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我的大学Online回忆站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f0f6f9;
+            font-family: "Microsoft YaHei", sans-serif;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px 30px;
+        }
+
+        /* 顶部横幅 */
+        .banner {
+            height: 220px;
+            background-color: #74a9cf;
+            border-radius: 0 0 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* 导航栏 */
+        nav {
+            background-color: #3b7ca9;
+            padding: 14px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 16px;
+                font-size: 18px;
+            }
+
+                nav a:hover {
+                    color: #ffdf80;
+                }
+
+        /* 通用卡片 */
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px #d1e2ec;
+        }
+
+        h2 {
+            color: #3b7ca9;
+            margin-bottom: 20px;
+            border-left: 6px solid #74a9cf;
+            padding-left: 10px;
+        }
+
+        /* 时间线整体 */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+            /* 竖向时间主线 */
+            .timeline::before {
+                content: "";
+                position: absolute;
+                left: 11px;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background-color: #74a9cf;
+            }
+
+        /* 时间线节点 */
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        /* 可点击时间圆点 */
+        .timeline-dot {
+            position: absolute;
+            left: -30px;
+            top: 8px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #3b7ca9;
+            border: 4px solid #74a9cf;
+            z-index: 1;
+        }
+
+            .timeline-dot a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+        /* 日期 */
+        .timeline-date {
+            font-size: 18px;
+            font-weight: bold;
+            color: #3b7ca9;
+            margin-bottom: 10px;
+        }
+
+        /* 照片容器【修改：删除固定height】 */
+        .timeline-photo {
+            width: 100%;
+            max-width: 320px;
+            background-color: #e8f1f7;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        /* 回忆文字 */
+        .timeline-text {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            color: #3b7ca9;
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部横幅 -->
+    <div class="banner">我的大学Online回忆站</div>
+
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#about">关于这段时光</a>
+        <a href="#timeline">回忆时间线</a>
+    </nav>
+
+    <!-- 关于这段时光 -->
+    <div class="card" id="about">
+        <h2>关于这段时光</h2>
+        <p>记录大学的点点滴滴，每一张照片，每一段回忆，都藏着和舍友朋友们的美好瞬间。</p>
+    </div>
+
+    <!-- 回忆时间线 -->
+    <div class="card" id="timeline">
+        <h2>回忆时间线</h2>
+
+        <div class="timeline">
+
+            <!-- 节点1 2025-09-10 开学军训 -->
+            <div class="timeline-item" id="point1">
+                <div class="timeline-dot">
+                    <a href="#point1" title="2025-09-10"></a>
+                </div>
+                <div class="timeline-date">2025-09-10</div>
+                <div class="timeline-photo">
+                    <img src="2025.9.10.jpg" alt="开学军训" style="width:100%;object-fit:contain;border-radius:8px;">
+                </div>
+                <div class="timeline-text">
+                    正式开学，开启军训生活，烈日下一起训练，是大学生活的起点。
+                </div>
+            </div>
+
+            <!-- 节点2 2025-09-30 火锅聚餐 -->
+            <div class="timeline-item" id="point2">
+                <div class="timeline-dot">
+                    <a href="#point2" title="2025-09-30"></a>
+                </div>
+                <div class="timeline-date">2025-09-30</div>
+                <div class="timeline-photo">
+                    <img src="2025.9.30.jpg" alt="火锅聚餐" style="width:100%;object-fit:contain;border-radius:8px;">
+                </div>
+                <div class="timeline-text">
+                    国庆前，和舍友们第一次火锅聚餐，热热闹闹，欢声笑语。
+                </div>
+            </div>
+
+            <!-- 节点3 2025-10-16 舍友生日商场捉迷藏 -->
+            <div class="timeline-item" id="point3">
+                <div class="timeline-dot">
+                    <a href="#point3" title="2025-10-16"></a>
+                </div>
+                <div class="timeline-date">2025-10-16</div>
+                <div class="timeline-photo">
+                    <img src="2025.10.16.jpg" alt="舍友生日" style="width:100%;object-fit:contain;border-radius:8px;">
+                </div>
+                <div class="timeline-text">
+                    陪舍友过生日，在商场捉迷藏，到处奔跑，充满欢乐。
+                </div>
+            </div>
+
+            <!-- 节点4 2025-12-12 济南初雪 -->
+            <div class="timeline-item" id="point4">
+                <div class="timeline-dot">
+                    <a href="#point4" title="2025-12-12"></a>
+                </div>
+                <div class="timeline-date">2025-12-12</div>
+                <div class="timeline-photo">
+                    <img src="2025.12.12.jpg" alt="济南初雪" style="width:100%;object-fit:contain;border-radius:8px;">
+                </div>
+                <div class="timeline-text">
+                    济南迎来初雪，和室友出门看雪，踩雪拍照，氛围感拉满。
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        Web前端随堂作业
+    </footer>
+
+</body>
+</html>
